@@ -1,0 +1,42 @@
+version: '3'
+services:
+  web:
+    restart: always
+    build: ./web
+    expose:
+      - "8000"
+    links:
+      - postgres:postgres
+      - redis:redis
+    volumes:
+      - /usr/src/app
+      - /usr/src/app/static
+    environment:
+      DEBUG: 'true'
+    command: /usr/local/bin/python3 manage.py runserver
+
+  nginx:
+    restart: always
+    build: ./nginx/
+    ports:
+      - "80:80"
+    volumes:
+      - /www/static
+    volumes_from:
+      - web
+    links:
+      - web:web
+
+  postgres:
+    restart: always
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data/
+
+volumes:
+  web-django:
+  web-static:
+  pgdata:
+  redisdata:
