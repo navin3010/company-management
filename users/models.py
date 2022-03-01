@@ -15,5 +15,5 @@ class UserProfileDetails(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
 
     class Meta:
-        unique_together = ["user"]
+        #unique_together = ["user"]
         db_table = "user_profile_details"

@@ -12,6 +12,7 @@ gunicorn = "*"
 djongo = "*"
 dnspython = "*"
 pymongo = "==3.12.1"
+sqlparse = "==0.2.4"
 
 [dev-packages]
 
