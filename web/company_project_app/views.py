@@ -1,4 +1,4 @@
-from asyncio import exceptions
+#from asyncio import exceptions
 from rest_framework import views, response, status, serializers
 from company_project_app import controllers
 from company_employee_app import models as company_models
@@ -105,7 +105,7 @@ class ProjectAPI(views.APIView):
             get_project_data_by_id = models.Project.objects.get(
                 id=id, is_active=True
             )
-        except exceptions:
+        except Exception:
             raise serializers.ValidationError(
                 {
                     "result": False,
