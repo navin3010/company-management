@@ -8,3 +8,18 @@ services:
       - .:/code
     ports:
       - "8000:8000"
+    depends_on:
+      - db
+    links:
+      - db:db
+    # networks:
+    #   - djangonetwork
+  db:
+    image: postgres
+    environment:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: navinsdb
+          POSTGRES_DB: company-details
+  # networks:
+  #     djangonetwork:
+  #         driver: bridge
