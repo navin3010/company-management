@@ -9,6 +9,9 @@ psycopg2 = "*"
 djangorestframework = "*"
 oauth2-provider = "*"
 gunicorn = "*"
+djongo = "*"
+dnspython = "*"
+pymongo = "==3.12.1"
 
 [dev-packages]
 

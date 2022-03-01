@@ -80,10 +80,23 @@ WSGI_APPLICATION = 'company_management_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'djongo',
+        "CLIENT": {
+           "name": "company_details",
+           "host": "mongodb+srv://naveen:N%40vin3010@cluster0.xtsf0.mongodb.net/test",# "cluster0-shard-00-01.xtsf0.mong",  #mongodb+srv://naveen:N%40vin3010@cluster0.xtsf0.mongodb.net/test
+           "username": 'naveen',
+           "password": 'N@vin3010',
+           "authMechanism": "SCRAM-SHA-1",
+        }, 
     }
 }
 # DATABASES = {
