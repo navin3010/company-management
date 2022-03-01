@@ -8,6 +8,7 @@ django = "*"
 psycopg2 = "*"
 djangorestframework = "*"
 oauth2-provider = "*"
+gunicorn = "*"
 
 [dev-packages]
 
